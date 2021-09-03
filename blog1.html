@@ -37,7 +37,7 @@
     <p>Now anyone who loads this article has their site authorization data sent to the malicious user's hidden server.</p>
 
     <h2>Prevention</h2>
-    <p></p>
+    <p>Here is an incorrect block of Javascript code that reads in a user's name and prints it back to them:</p>
     <pre>
         <code>
             @app.route("/")
@@ -46,6 +46,17 @@
                 return "Hello %s" % name
         </code>
       </pre>
+      <p>Here is a fixed version:</p>
+      <pre>
+        <code>
+            from flask import escape
+            @app.route("/")
+            def hello():
+                name = request.args.get('name')
+                return "Hello %s" % escape(name)
+        </code>
+      </pre>
+      <p>flask.escape() automatically escapes characters like &lt; and &gt; to mitigate exploits.</p>
 </body>
 <footer>
     <p>Source: <a href="https://en.wikipedia.org/wiki/Cross-site_scripting#Persistent_attack" target="_blank"> Wikipedia</a></p>
