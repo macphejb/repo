@@ -8,10 +8,11 @@
     <style>
     body {
         font-family: 'Helvetica', sans-serif;
+        font-size: 2em;
         background-color:rgb(255, 218, 218);
         margin: 3em;
     }
-    .opener{
+    .shapetext{
         font-family: 'Luckiest Guy', cursive;
         font-size: 30px;
     }
@@ -31,6 +32,7 @@
         border-radius: 10px;
         background-color: rgb(235, 235, 235);
         font-size: 2em;
+        padding: 0.5em;
     }
     </style>
 </head>
@@ -39,7 +41,7 @@
     <h1>Blog Entry #3</h1>
     <h2>9/16/2021</h2>
 
-    <svg viewBox="0 0 500 150" class = "opener">
+    <svg viewBox="0 0 500 150" class = "shapetext">
         <path id="curve" d="M6,150C49.63,93,105.79,36.65,156.2,47.55,207.89,58.74,213,131.91,264,150c40.67,14.43,108.57-6.91,229-145" />
         <text x="25">
           <textPath xlink:href="#curve">
@@ -67,7 +69,36 @@
     &lt;/svg&gt;
         </code>
     </pre>
+
+    <p>
+        I was a bit taken aback, it looked pretty daunting. My eyes were drawn to the seemingly nonsense string of numbers and characters. But, I was determined to figure it out.
+        I started with the first tag. The article mentions SVG though it never explained what it was. After googling I found it stands for Scalable Vector Graphics and can be used to
+        make 2d graphics within HTML. That was the key to shaping the text. Basically, you draw a shape in SVG, hide that shape, then use textPath to curve text around the invisible shape.
+        The string of characters I noticed were instructions on how the curve is drawn. This one is pretty specific so I'm guessing the curve was drawn out by hand then converted
+        to the path format. It ends up looking like a sine wave.
+    </p>
+    <p>
+        The only step from there was to make a circular path to wrap my text around. I took one from Stack Overflow, modified the above code replacing the path, and I had my circle text!
+    </p>
     
-       
+    <h2>Sources:</h2>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG#getting_started_with_svg" target="_blank">SVG guide for beginners</a></li>
+        <li><a href="https://stackoverflow.com/questions/5737975/circle-drawing-with-svgs-arc-path" target="_blank">Stack Overflow thread that gave me the circle path</a></li>
+    </ul>
+
+    <svg viewBox="0 0 500 200" class = "opener">
+        <path id="circle" d="
+        M 100, 100
+        m -75, 0
+        a 75,75 0 1,1 150,0
+        a 75,75 0 1,1 -150,0
+        " />
+        <text x="40">
+          <textPath xlink:href="#circle">
+            Wacky shaped text in a circle!
+          </textPath>
+        </text>
+      </svg>
 
 </body>
