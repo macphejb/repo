@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="blog_entry.css">
+    <title>Blog 4</title>
+</head>
+
+<body>
+  <main>
+    <h1>Blog Entry #4</h1>
+    <h2>9/23/2021</h2>
+
+    <svg width = "250" height = "600" id="example" class="example">
+      <circle class = "body" cx = 125 cy = 375 r = 120 fill = "white" stroke = "black" stroke-width= "5px"/>
+      <circle class = "middle" cx = 125 cy = 260 r = 90 fill = "white" stroke = "black" stroke-width= "5px"/>
+      <circle class = "head" cx = 125 cy = 160 r = 60 fill = "white" stroke = "black" stroke-width= "5px"/>
+      <circle class = "left-eye" cx = 105 cy = 150 r = 5 fill = "black" stroke = "black" stroke-width= "5px"/>
+      <circle class = "right-eye" cx = 145 cy = 150 r = 5 fill = "black" stroke = "black" stroke-width= "5px"/>
+      <polygon fill = "orange" points = "135,160 115,160 125,200" stroke = "black"/>
+    </svg>
+
+    <h2>SVG: Scalable Vector Graphics</h2>
+
+    <p>
+      This week I decided to get a better handle on SVG. I briefly encountered it during last week’s blog entry but I didn’t get that deep into it. 
+      We also imported some SVG icons in one of the recent labs so it seemed appropriate. I referenced this tutorial, which explains what SVG is and how to use it:
+
+    </p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9Y4P3FvZ5bg" title="YouTube video player" frameborder="0" allow="accelerometer; 
+      autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+
+    <p>
+      SVG is a vector graphic format. It differes from raster graphics, like JPEG or PNG. In raster graphics, images are made up of pixels. A 200px by 200px image
+      looks fine as a thumbnail, but when blown up to full screen on a high resolution monitor, it will look pretty blurry. Vector graphics are made up of equations
+      of lines and curves, and thus can be scaled to any size losslessly.
+    </p>
+    
+    <p>
+      What's cool about SVG is that you can simply write out these equations yourself, you don't need to go draw it up in an illustrator and download it (although that's an option too). 
+      After watching through the video above for the crash course, I decided to see what I could come up with using my limited art talents. I ended up with the snowman above. 
+      I think it looks pretty cool. Plus, you can zoom in as far as you want to on it and you'll see almost no aliasing at all. A raster graphic probably wouldn't hold up to that.
+    </p>
+
+    <figcaption>Code for the snowman:</figcaption>
+
+    <pre>
+      <code>
+&lt;svg width = "250" height = "600" id="example" class="example">
+  &lt;circle class = "body" cx = 125 cy = 375 r = 120 fill = "white" stroke = "black" stroke-width= "5px"/>
+  &lt;circle class = "middle" cx = 125 cy = 260 r = 90 fill = "white" stroke = "black" stroke-width= "5px"/>
+  &lt;circle class = "head" cx = 125 cy = 160 r = 60 fill = "white" stroke = "black" stroke-width= "5px"/>
+  &lt;circle class = "left-eye" cx = 105 cy = 150 r = 5 fill = "black" stroke = "black" stroke-width= "5px"/>
+  &lt;circle class = "right-eye" cx = 145 cy = 150 r = 5 fill = "black" stroke = "black" stroke-width= "5px"/>
+  &lt;polygon fill = "orange" points = "135,160 115,160 125,200" stroke = "black"/>
+&lt;/svg>
+      </code>
+  </pre>
+    
+    <h2>Sources:</h2>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG#getting_started_with_svg" target="_blank">SVG guide for beginners</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Vector_graphics" target="_blank">Wikipedia</a></li>
+        <li>The embedded video above, as well as other videos by that creator</li>
+    </ul>
+  </main>
+</body>
