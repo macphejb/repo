@@ -1,0 +1,387 @@
+
+img{
+  display: flex;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.container
+
+{
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 100%;
+
+}
+
+.container .face
+
+{
+
+    position: relative;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background-color: #ffcd00;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center; 
+
+    margin: 0 20px; 
+
+}
+
+.container .face:hover
+
+{
+
+background: linear-gradient(180deg, #f44336, #f44336, #ffcd00);
+
+}
+
+.container .face:before
+
+{
+
+content: '';
+
+position: absolute;
+
+top: 180px;
+
+width: 150px;
+
+height: 70px;
+
+border-bottom-left-radius: 70px;
+
+border-bottom-right-radius: 70px;
+
+background: #b57700;
+
+transition: 0.5s;
+
+}
+
+.container .face:hover:before
+
+{
+
+    top: 210px;
+
+    width: 150px;
+
+    height: 20px;
+
+    border-bottom-left-radius: 70px;
+
+    border-bottom-right-radius: 70px;
+
+    background: #9d0b00;
+
+
+
+}
+
+.container .face .face_eyes 
+
+{
+
+    position: relative;
+
+    top: 0;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+}
+
+.container .face .face_eyes .face_eye{
+
+    position: relative;
+
+    top: -40px;
+
+    width: 80px;
+
+    height: 80px;
+
+    display: block;
+
+    margin: 0 15px;
+
+    background: #fff;
+
+    border-radius: 50%;
+
+
+
+}
+
+.container .face .face_eyes .face_eye:before
+
+{
+
+content: '';
+
+position: absolute;
+
+top: 50px;
+
+left: 25px;
+
+transform: translate(-50%,-50%);
+
+width: 40px;
+
+height: 40px;
+
+background: #333;
+
+border-radius: 50%;
+
+}
+
+.container h2{
+
+    position: absolute;
+
+    top: 75px;
+
+    font-size: 3em;
+
+    color: #fff;
+
+}
+
+.container h2:last_child
+
+{
+
+    position: absolute;
+
+    top: initial;
+
+    bottom: 75px;
+
+    font-size: 3em;
+
+    color: #fff;
+
+}
+
+/*Second*/
+
+.hit-area {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.hitbox {
+  width: 100px;
+  height: 100px;
+  float:left;
+}
+
+.eye {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  left: 25%;
+  top: 40%;
+  background-color: white;
+  pointer-events: none;
+}
+
+.eye + .eye {
+  left: 55%;
+}
+
+.pupil {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  left: 50%;
+  top: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  transition: all .5s ease;
+}
+
+.eyelid {
+  width: 150px;
+  height: 100px;
+  background-color: rgb(255, 218, 218);
+  position: absolute;
+  left: 20%;
+  top: 25%;
+  pointer-events: none;
+  -webkit-animation-name: blink;
+  -webkit-animation-duration: 4.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-delay: 1s;
+  -webkit-transition: all .5s ease;
+}
+
+.eyelid + .eyelid {
+  left: 50%;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    top: 25%;
+  }
+  95% {
+    top: 25%;
+  }
+  100% {
+    top: 40%;
+  }
+}
+
+.hitbox:hover ~ .eyelid {
+  -webkit-transform: rotate(-10deg);
+}
+
+.hitbox:hover ~ .eyelid:nth-of-type(2n+1) {
+  -webkit-transform: rotate(10deg);
+}
+
+#c-3:hover ~ .eyelid {
+  -webkit-transform:  rotate(15deg);
+}
+
+#c-3:hover ~ .eyelid:nth-of-type(2n+1) {
+  -webkit-transform: rotate(-15deg);
+}
+
+#c-3:hover ~ .eye .pupil {
+  background-color: red;
+}
+
+#a-1:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(60deg) translate(-30px);
+}
+
+#a-2:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(80deg) translate(-30px);
+}
+
+#a-3:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(90deg) translate(-30px);
+}
+
+#a-4:hover ~.eye > .pupil {
+  -webkit-transform: rotate(100deg) translate(-30px);
+}
+
+#a-5:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(120deg) translate(-30px);
+}
+
+#b-1:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(50deg) translate(-25px);
+}
+
+#b-2:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(70deg) translate(-25px);
+}
+
+#b-3:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(90deg) translate(-25px);
+}
+
+#b-4:hover ~.eye > .pupil {
+  -webkit-transform: rotate(110deg) translate(-25px);
+}
+
+#b-5:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(130deg) translate(-25px);
+}
+
+#c-1:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(0deg) translate(-25px);
+}
+
+#c-2:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(0deg) translate(-10px);
+}
+
+#c-3:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(0deg) translate(20px);
+}
+
+#c-3:hover ~ .eye:nth-of-type(2n+1) > .pupil {
+  -webkit-transform: rotate(0deg) translate(-20px);
+}
+
+#c-4:hover ~.eye > .pupil {
+  -webkit-transform: rotate(0deg) translate(10px);
+}
+
+#c-5:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(0deg) translate(25px);
+}
+
+#d-1:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-50deg) translate(-25px);
+}
+
+#d-2:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-70deg) translate(-25px);
+}
+
+#d-3:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-90deg) translate(-25px);
+}
+
+#d-4:hover ~.eye > .pupil {
+  -webkit-transform: rotate(-110deg) translate(-25px);
+}
+
+#d-5:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-130deg) translate(-25px);
+}
+
+#e-1:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-40deg) translate(-30px);
+}
+
+#e-2:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-60deg) translate(-30px);
+}
+
+#e-3:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-80deg) translate(-30px);
+}
+
+#e-4:hover ~.eye > .pupil {
+  -webkit-transform: rotate(-100deg) translate(-30px);
+}
+
+#e-5:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-120deg) translate(-30px);
+}
