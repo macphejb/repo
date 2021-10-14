@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="blog_entry.css">
+    <link rel="stylesheet" href="blog6.css">
+    
+    <title>Blog 6</title>
+</head>
+
+<body>
+  <main>
+    <h1>Blog Entry #6</h1>
+    <h2>10/14/2021</h2>
+
+    <h2>Cursors</h2>
+
+    <p>
+      A common theme in my blog entires, this post was inspired by a random sighting out on the web. I was on Reddit, and noticed that whenever I visited a particular
+      subreddit (can't remember which) my cursor would change from its default white arrow. I guess moderators of some subreddits have CSS permissions on their pages.
+
+    </p>
+
+    <p>
+      Naturally, I decided to investigate how I could do this myself. 
+    </p>
+
+    <img src="blog6code1.JPG" alt = "Javascript Code">
+
+    <p>
+      The code couldn't be simpler. You just set the cursor attribute to an image sourced by url or file-path. It will only show up in whatever field you apply this 
+      tag. You'll notice that I have it in the margins, which I accomplished by first setting a custom cursor page-wide then overriding it in the body to the default cursor.
+    </p>
+
+    <script language="Javascript">
+      function example_change_cursor() {
+        document.body.style.cursor = document.getElementById('example-cursor').options[document.getElementById('example-cursor').selectedIndex].value;
+      }
+      function example_restore_cursor() {
+        document.body.style.cursor = 'default';
+      }
+    </script>
+    <select id="example-cursor">
+      <option>default</option>
+      <option>crosshair</option>
+      <option>help</option>
+      <option>move</option>
+      <option>not-allowed</option>
+      <option>pointer</option>
+      <option>progress</option>
+      <option>text</option>
+      <option>wait</option>
+    </select>
+    <input type="button" onclick="example_change_cursor()" value="Change Cursor" />
+    <input type="button" onclick="example_restore_cursor()" value="Restore Default" />
+
+    <p>
+      For something a little more complex, here is a tool that can dynamically change the cursor to some of the system-wide options. It takes advantage of the same CSS field shown above
+      but uses JS to switch between cursors.
+    </p>
+    
+    <img id = "pic2" src="blog6code2.JPG" alt = "Javascript Code">
+
+    <p>
+      There is a reason the custom cursor trend that died out in the 2000s. They can just be annoying, especially if they are page-wide. And actually having to click links and highlight text is made 
+      unnecessarily hard. Still, this was a useful skill to have picked up. Now if I want to have a movable component on my site, for example, I'll be able to make it intuitive to the user by
+      invoking the moving cursor style.
+    </p>
+
+    <h2>Sources:</h2>
+    <ul>
+        <li><a href="https://www.pexels.com/photo/coronavirus-3992933/" target="_blank">Free-to-use Covid-19 icon</a></li>
+        <li><a href="https://mightytechno.com/css-cursor-change-website-cursor/" target="_blank">Cursor changing guide (image)</a></li>
+        <li><a href="https://electrictoolbox.com/change-cursor-javascript/" target="_blank">Cursor changing guide (system options)</a></li>
+    </ul>
+    <script src="/blog5.js"></script>
+  </main>
+</body>
