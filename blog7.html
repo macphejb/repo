@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="blog_entry.css">
+    <link rel="stylesheet" href="blog7.css">
+    
+    <title>Blog 7</title>
+</head>
+
+<body>
+  <main>
+    <h1>Blog Entry #7</h1>
+    <h2>11/4/2021</h2>
+
+    <h2>Interactive Sounds</h2>
+
+    <p>
+      My blog is too quiet. So, this week I want to learn about adding sounds to a site.
+    </p>
+
+    <p>
+      There are some HTML tags that make this easy. You can use your browser's audio controls to play a sound (may be loud):
+    </p>
+
+    <audio controls>
+      <source src="gong.wav" type="audio/wav">
+    Your browser does not support the audio element.
+    </audio>
+
+    <img src="blog7code.jpg" alt = "HTML audio Code">
+
+    <p>The supported filetypes are mp3, wav, and ogg. If there is a problem with the audio or your browser can't play it, the controls will grey out or it might display an error message:</p>
+
+    <audio controls>
+      <source src="gong.notreal" type="audio/notreal">
+    Your browser does not support the audio element.
+    </audio>
+
+    <img src="blog7code2.jpg" alt = "HTML audio Code">
+
+    <p>
+      You can set a track to autoplay as soon as the site is opened. Some browsers outright prevent this, others allow it, and others still only let sounds autoplay if they start out muted.
+    </p>
+
+    <audio controls autoplay muted>
+      <source src="2001.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+
+    <img src="blog7code3.jpg" alt = "HTML audio Code">
+
+    <p>You don't have to use the browser controls, though. You could recreate your own if you wanted to with CSS and JS. For now, this button does the trick:</p>
+
+    <script>
+      function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }
+    </script>
+
+    <input type="button" value="PLAY" onclick="play()">
+    <audio id="audio" src="gong.wav"></audio>
+
+    <p>Audio seems to be used sparingly in modern web design. I can vaguely remember link clicking sound effects and email swooshes, but the time of random noises seems to be over. 
+      You should really only use sounds for important notifications or if you really need to use them, like in a music or podcast app.</p>
+
+    <h2>Sources:</h2>
+    <ul>
+        <li><a href="https://www.w3schools.com/html/html5_audio.asp" target="_blank">Audio tag tutorial</a></li>
+        <li><a href="https://freesound.org/people/GowlerMusic/sounds/266566/" target="_blank">Gong sound</a></li>
+        <li><a href="https://www.youtube.com/watch?v=e-QFj59PON4" target="_blank">Also Sprach Zarathustra aka 2001 theme</a></li>
+    </ul>
+    <script src="/blog5.js"></script>
+  </main>
+</body>
