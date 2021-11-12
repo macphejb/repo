@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="blog_entry.css">
+    <link rel="stylesheet" href="blog7.css">
+    
+    <title>Blog 7</title>
+</head>
+
+<body>
+  <main>
+    <h1>Blog Entry #8</h1>
+    <h2>11/11/2021</h2>
+
+    <h2>Video Tag</h2>
+
+    <p>
+      Last week I covered audio. So why not video this time?
+    </p>
+
+    <p>
+      I've already mentioned embedded YouTube videos in another blog entry. So this week I wanted to focus on the native video player.
+    </p>
+
+    <video width="500" height="300" controls>
+      <source src="nyan.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <img src="blog8code.jpg" alt = "HTML video Code">
+
+    <p>In this snippet, you can see some of the attributes assignable to the video player. Here, I have specified the size of the player and enabled the controls bar. 
+      Browsers might let you set some of these attributes yourself. For example, in Chrome you can right click the video and hide the controls or set the video to loop.
+      It is also good practice to include an error message that some browsers will display if the video doesn't work.
+    </p>
+
+    <video width="500" height="300" controls poster="questionmark.png">
+      <source src="nyan.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <img src="blog8code2.jpg" alt = "HTML video Code with poster">
+
+    <p>Another attribute is "poster." This changes the thumbnail of the video until it starts playing. Can you guess what video this is?</p>
+
+
+    <p>The supported filetypes are mp4, webm, and ogg. This type of video embedding certainly has its use in modern web design, but for general cases I think inline frame embedding is preferable. 
+      It lets you avoid file format compatibility issues, and at this point people are probably more familiar with YouTube's control UI than any others.</p>
+
+    <h2>Sources:</h2>
+    <ul>
+        <li><a href="https://www.w3schools.com/tags/tag_video.asp" target="_blank">Video tag tutorial</a></li>
+        <li><a href="https://www.youtube.com/watch?v=v2GCfSGFkG0" target="_blank">Nyan Cat</a></li>
+        <li><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/200px-Question_mark_%28black%29.svg.png" target="_blank">Question Mark</a></li>
+    </ul>
+    <script src="/blog5.js"></script>
+  </main>
+</body>
